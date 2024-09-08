@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: java-webapp-pod
+  labels:
+    app: javaa-webapp
+    tier: java-backend-process
+spec:
+  containers:
+  - name: java-webapp
+    image: neeabhishek/java-webapp:1.1
+    ports:
+    - containerPort: 8080 #Port on the pod which the application will forward traffic to.
+    resources:
+      limits:
+        memory: 100Mi
